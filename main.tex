@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt,headsepline]{scrartcl}
+
+
+\usepackage{biblatex}
+\addbibresource{main.bib}
+
+\usepackage[bookmarksnumbered, hyperfootnotes=false]{hyperref}
+\usepackage{xurl} % break long URLs
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc} % correctly typesetting characters and symbols
+\usepackage[shortlabels]{enumitem} % for \begin{itemize} [$\circ$]
+\usepackage[table]{xcolor}
+\usepackage{lmodern} % font
+\usepackage{graphicx}
+\usepackage{standalone} % to import Tikz figures from standalone documents
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes, snakes, fit, calc, patterns}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{centernot} % f.e. to write "not a subset of"
+\usepackage{longtable}
+\usepackage{fancybox}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{bm}
+\usepackage{amsthm}
+\usepackage{cleveref} % use Cref to automatically add "Figure", "Section", or "Table" in front of the reference
+\usepackage{caption}
+\usepackage{subcaption}
+
+\input{settings/header.tex}
+\input{settings/commands.tex}
+\input{settings/hyphenation.tex}
+
+\begin{document}
+
+\input{titlepage.tex}
+
+\pagenumbering{roman}
+\input{abstract.tex}
+\input{tables/tableOfContents.tex}
+\input{tables/tableOfFiguresAndTables.tex}
+
+\pagenumbering{arabic}
+\input{sections/section_01.tex}
+\input{sections/section_02.tex}
+
+
+\input{references.tex}
+
+\end{document}

@@ -1,0 +1,7 @@
+out/*
+*/**/*.log
+*/**/*.aux
+*/**/*.fdb_latexmk
+*/**/*.synctex.gz
+indent.log
+fig/tikz/out/tikz_figures.fls
