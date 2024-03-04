@@ -3,5 +3,7 @@ out/*
 */**/*.aux
 */**/*.fdb_latexmk
 */**/*.synctex.gz
+*/**/*.fls
+*/**/*.pdf
+
 indent.log
-fig/tikz/out/tikz_figures.fls
