@@ -1,6 +1,6 @@
 \documentclass[a4paper,12pt,headsepline]{scrartcl}
 
-\usepackage{biblatex}
+\usepackage[style=authoryear]{biblatex}
 \addbibresource{main.bib}
 \usepackage[bookmarksnumbered, hyperfootnotes=false]{hyperref}
 \usepackage{xurl} % break long URLs
@@ -14,17 +14,17 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, shapes, fit, calc, patterns}
 \usepackage{amsmath}
-\usepackage{algorithm}
-\usepackage{algorithmic}
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
 \usepackage{mathtools}
 \usepackage{enumerate}
-\usepackage{centernot} % f.e. to write "not a subset of"
-\usepackage{longtable}
-\usepackage{fancybox}
+% \usepackage{centernot} % f.e. to write "not a subset of"
+% \usepackage{longtable}
+% \usepackage{fancybox}
 \usepackage{color}
 \usepackage{amssymb}
-\usepackage{array}
-\usepackage{multirow}
+% \usepackage{array}
+% \usepackage{multirow}
 \usepackage{bm}
 \usepackage{amsthm}
 \usepackage{cleveref} % use Cref to automatically add "Figure", "Section", or "Table" in front of the reference
@@ -37,18 +37,17 @@
 
 \begin{document}
 
-\input{titlepage.tex}
+% \input{titlepage.tex}
 
 \pagenumbering{roman}
-\input{abstract.tex}
-\input{tables/tableOfContents.tex}
-\input{tables/tableOfFiguresAndTables.tex}
+% \input{abstract.tex}
+% \input{tables/tableOfContents.tex}
+% \input{tables/tableOfFiguresAndTables.tex}
 
 \pagenumbering{arabic}
 \input{sections/section_01.tex}
-\input{sections/section_02.tex}
 
 \input{references.tex}
-\input{appendix.tex}
+% \input{appendix.tex}
 
 \end{document}

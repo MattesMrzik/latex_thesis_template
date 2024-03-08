@@ -1,32 +1,112 @@
-\section{First Section}
-\markboth{First Section}{}
+\newcommand{\sectionName}{Ideas}
+\section{\sectionName}
+\markboth{\sectionName}{}
 
-Text of section 1. Here, a citation is used \cite{sample, onlineRef}.\\
-And a long Url nicely wrapped. And a long Url nicely wrapped. And a long Url nicely wrapped.
-\url{https://scholar.google.de/scholar?hl=en&as_sdt=0\%2C5&q=GNN+chaos+game+
-representation&btnG=&oq=GNN+chaos+game+repre}
+\subsection{Meetings \& eMails}
 
-\subsection{First subsection}
+\subsubsection*{Email Induja}
+\begin{itemize}
+    \item The high-level overview is "from sequencing reads of a repetitive region, group sequences into the two alleles present, then decompose each allele into its constituent motifs".
+    \item Ex. \textcolor{red}{CAGCAGCAGCAGCAG}\textcolor{green}{CCGCCGCCGCCG}\textcolor{red}{CAGCAGCAG} to \\5(CAG)4(CCG)3(CAG)
+    \item The challenges include handling sequencing errors, single-nucleotide mutations, and cases where the allele is mutating in-vivo, creating many more than 2 alleles (Ex. Huntington's).
+\end{itemize}
 
-\begin{table}
+\subsubsection*{Meeting on 07.03.2024}
+\begin{itemize}
+    \item only count the cag after the cgg
+    \item also test on low-depth read
+    \item tandem repeats are hard to sequence
+    \item catalouge-based methods only look at a particular pattern
+    \item look at tools by \textbf{Melissa Gymrek}
+\end{itemize}
+
+\subsection{Questions for me}
+\begin{itemize}
+    \item what are contigs, unitigs, assemblies, scaffolds, \dots
+\end{itemize}
+
+\subsection{Questions}
+\begin{itemize}
+    \item What reads are there? only from tandem repeat regions one is interested in
+    \item What are the lengths of the repeats, are there paired-end, what is the error rate?
+    \item Are genome assemblies not got at recognizing SNP or change in pattern in a tandem repeat?
+\end{itemize}
+
+
+\subsection{Data}
+
+
+\section{Related Tools}
+
+\subsection{EH}
+\cite{EH}
+\begin{itemize}
+    \item catalogue-based
+    \item reports repeats of lengths less than 150-300nt (only short)
+\end{itemize}
+
+\subsection{EMdh}
+\cite{EHdn}
+\begin{itemize}
+    \item catalogue-free
+    \item reports repeats of lengths greater than 150nt (only long)
+\end{itemize}
+\begin{table}[h]
+    \caption{Output of EHdn}
     \center
-    \begin{tabular}{c|c}
-        this   & is    \\\hline
-        sample & table \\
+    \begin{tabular}{c|c|c|c|c|c}
+        chr  & start & end & motif & samples  & size \\\hline
+        chr1 & x     & y   & AAG   & sample 1 & 1    \\
+        chr1 & a     & b   & AGG   & sample 1 & 1.05
     \end{tabular}
-    \caption{This is table 1.}
 \end{table}
 
-\begin{figure}
-    \center
-    \includegraphics[width=4cm]{fig/images/figure_01.png}
-    \caption{This is Figure 1.}
-\end{figure}
+\subsection{TRGT}
+\cite{trgt}
+\begin{itemize}
+    \item catalogue-based
+    \item PacBio $\rightarrow$ works with long reads
+\end{itemize}
 
-\begin{figure}
-    \center
-    \includestandalone{fig/tikz/tikz_figures}
-    \caption{This is my tikz figure}
-\end{figure}
+\subsection{LongTR}
+\cite{longTR}
+\begin{itemize}
+    \item PacBio and ONT
+    \item  may be catalogue-based (or warpSTR is catalogue-based)
+\end{itemize}
+
+\subsection{warpSTR}
+\cite{warpSTR}
+\begin{itemize}
+    \item may be catalogue-based (or LongTr is catalogue-based)
+\end{itemize}
+
+\subsection{Mahreen}
+\begin{itemize}
+    \item catalogue-based
+\end{itemize}
+
+\section{Papers}
+\subsection{DExTaR: Detection of Exact Tandem Repeats based on the de Bruijn graph \cite{Fertin2014DExTaRDO}}
+
+\begin{table}[h]
+    \begin{tabular}{rl}
+        $l_p$           & is the length of the pattern $p$.                      \\
+        $cn_p$          & is the number of times the pattern is in $\varepsilon$ \\
+        $l_p\cdot cn_p$ & is the length of $\varepsilon$                         \\
+    \end{tabular}
+\end{table}
+
+\begin{theorem}
+    If $l_p\cdot cn_p\geq l_p+k$ then $Suff(v_{l_p},k-1)=Pref(v_1,k-1)$, where $v_1,\dots,v_{l_p}$ are the first $l_p$ $k$-mers of $\varepsilon$.
+\end{theorem}
+\begin{remarkth}
+    If a $k$-mer that starts in the last position of the pattern still fits in the repeat, a cycle is created.
+\end{remarkth}
+\begin{example}
+    $\varepsilon=GA\textcolor{red}{CGAC}GA,k=4$, then $\textcolor{red}{v_{l_p} = CGAC}$ and $v_1=GACG$.
+\end{example}
+
+
 
 \newpage

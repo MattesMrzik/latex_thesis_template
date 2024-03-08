@@ -3,7 +3,9 @@
 \begin{document}
 \begin{tikzpicture}
     % Your TikZ code goes here
-    \draw (0,0) circle (2);
-    \filldraw (1,0) rectangle (2,1);
+    \coordinate (A) at (0,0);
+    \draw (A) circle (1cm);
+    \coordinate (B) at ([shift={(0,1)}] A);
+    \draw (B) circle (1cm);
 \end{tikzpicture}
 \end{document}
